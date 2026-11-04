@@ -50,14 +50,14 @@ Sem registro de entrega neste log.
 - **Data da entrega:** a preencher.
 - **Arquivos/observações:** a preencher.
 
-## Integrante 3 — Projeção, seleção de atributos e agrupamento
-
-Sem registro de entrega neste log.
-
-- **Entregas planejadas:** PCA/t-SNE, agrupamento e métodos de seleção de
-  atributos.
-- **Data da entrega:** a preencher.
-- **Arquivos/observações:** a preencher.
+## [Data: 04/11/2026] - Integrante 3: Redução de Dimensionalidade e Feature Selection
+- **Status:** Concluído
+- **Entregas:**
+  - Inclusão de cabeçalhos e estrutura em Markdown no notebook `Feature_selection.ipynb`.
+  - Estudo de agrupamento não-supervisionado (K-Means e GMM com Silhouette Score).
+  - Projeções PCA (Scree Plot, 2D e 3D) e t-SNE 2D.
+  - Seleção de atributos (Filtro de Colinearidade, ANOVA, Mutual Information e RFE).
+  - Exportação dos datasets reduzidos (`wdbc_train_pca.csv` e `wdbc_train_top10.csv`) na pasta `data/processed/`.
 
 ## Integrante 4 — Modelagem preditiva e ajuste de modelos
 
