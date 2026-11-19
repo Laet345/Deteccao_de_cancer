@@ -226,17 +226,17 @@ FASE 4: Síntese, Discussão e Entrega (Semana 4)
 --------------------------------------------------------------------------------
 5. CHECKLIST DOS ITENS OBRIGATÓRIOS DO PROF. FRANCISCO RODRIGUES
 --------------------------------------------------------------------------------
-[ ] Pergunta fundamental formulada e justificada.
-[ ] Preparação dos dados: remoção do ID, tratamento de atributos e variáveis alvo.
-[ ] Descrição estatística detalhada (tendência central, dispersão, assimetria).
-[ ] Identificação de padrões relevantes e multicolinearidade com gráficos caprichados.
-[ ] Enquadramento do problema (Classificação supervisionada + estudo de agrupamento).
-[ ] Ajuste e seleção de múltiplos modelos (KNN, SVM, Regressão Logística, Random Forest, etc.).
-[ ] Comparação com múltiplas métricas (Acurácia, F1, Recall, Curva ROC-AUC, Matriz de Confusão).
-[ ] Melhoria por transformação: Escalonamento, PCA e Seleção de Atributos (Feature Selection).
-[ ] Obtenção e tabulação clara dos resultados finais.
-[ ] Discussão crítica dos resultados, relevância médica dos erros e melhorias futuras.
-[ ] Sumário executivo cobrindo todo o projeto.
-[ ] Qualidade gráfica destacada (gráficos legíveis, informativos e bem formatados).
-[ ] Notebook Jupyter documentado e link do GitHub pronto.
+[x] Pergunta fundamental formulada e justificada.
+[x] Preparação dos dados: remoção do ID, tratamento de atributos e variáveis alvo.
+[x] Descrição estatística detalhada (tendência central, dispersão, assimetria).
+[x] Identificação de padrões relevantes e multicolinearidade com gráficos caprichados.
+[x] Enquadramento do problema (Classificação supervisionada + estudo de agrupamento).
+[x] Ajuste e seleção de múltiplos modelos (KNN, SVM, Regressão Logística, Random Forest, etc.).
+[x] Comparação com múltiplas métricas (Acurácia, F1, Recall, Curva ROC-AUC, Matriz de Confusão).
+[x] Melhoria por transformação: Escalonamento, PCA e Seleção de Atributos (Feature Selection).
+[x] Obtenção e tabulação clara dos resultados finais.
+[x] Discussão crítica dos resultados, relevância médica dos erros e melhorias futuras.
+[x] Sumário executivo cobrindo todo o projeto.
+[x] Qualidade gráfica destacada (gráficos legíveis, informativos e bem formatados).
+[ ] Notebook Jupyter documentado e link do GitHub pronto. (notebook e PDF prontos; falta commit/push)
 ================================================================================

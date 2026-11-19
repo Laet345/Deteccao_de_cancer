@@ -105,12 +105,41 @@ Sem registro de entrega neste log.
 
 ## Integrante 5 — Avaliação, síntese e documentação
 
-Sem registro de entrega neste log.
+Responsável: David Carlos Santos de Lima.
 
-- **Entregas planejadas:** comparação de métricas, análise de falsos negativos,
-  discussão, síntese e compilação final.
-- **Data da entrega:** a preencher.
-- **Arquivos/observações:** a preencher.
+### 18/11/2026
+
+- Avaliou no conjunto de teste (114 pacientes, 42 com câncer) os 28 modelos
+  treinados pelo Vitor, **uma única vez**, com a mesma divisão de sempre
+  (`test_size=0.2`, `stratify=y`, `random_state=42`). Nenhum modelo, cenário ou
+  limiar foi escolhido olhando o teste.
+- Calculou acurácia, precisão, sensibilidade, especificidade, F1, ROC-AUC e AP, e
+  fez as curvas ROC e Precision-Recall, as matrizes de confusão (com contagem e
+  porcentagem), mapas de calor modelo × cenário, intervalos de confiança por
+  bootstrap e uma tabela final com os modelos.
+- Análise clínica: quais pacientes viram falso negativo (a de ID 859983 é
+  classificada como benigna pelos 28 modelos), ajuste do limiar usando só o treino
+  (sensibilidade de pelo menos 98%, comparada com Youden e F2), custo esperado para
+  razões FN:FP de 1 a 50 e quais atributos o modelo mais usa.
+- Resultado principal: os melhores modelos têm ROC-AUC de 0,99 ou mais. O SVM RBF
+  (cenário A) encontra 40 de 42 cânceres sem falso positivo com limiar 0,5, e 41 de
+  42 com 2 falsos positivos depois de ajustar o limiar (0,181). Os intervalos de
+  confiança são largos, então não dá para dizer qual dos melhores modelos é melhor.
+- Montou o **notebook final**
+  [`notebooks/analise_cancer_mama.ipynb`](notebooks/analise_cancer_mama.ipynb), com
+  as seções 1 a 10 (do problema à conclusão), juntando o código do Lucas, do Caio,
+  do Gabriel e do Vitor sem treinar os modelos de novo e sem sobrescrever os
+  arquivos deles.
+- Arquivos novos:
+  - [`results/metricas_teste.csv`](results/metricas_teste.csv) e
+    [`results/metricas_teste_ic95.csv`](results/metricas_teste_ic95.csv);
+  - [`results/tabela_final_modelos.csv`](results/tabela_final_modelos.csv);
+  - [`results/limiares.csv`](results/limiares.csv);
+  - [`results/figuras/`](results/figuras/): 21 gráficos do notebook;
+  - [`entrega/projeto_final_link.pdf`](entrega/projeto_final_link.pdf): PDF de 1
+    página com os nomes do grupo e o link do GitHub, para enviar no e-Disciplinas.
+- Pendência: fazer `commit` e `push` dos arquivos novos. O link do notebook só
+  funciona depois disso, com o repositório aberto para o professor.
 
 ## Próximos registros
 
