@@ -61,12 +61,47 @@ Sem registro de entrega neste log.
 
 ## Integrante 4 — Modelagem preditiva e ajuste de modelos
 
-Sem registro de entrega neste log.
+### 18/11/2026
 
-- **Entregas planejadas:** treinamento e ajuste de classificadores, validação
-  cruzada estratificada e busca de hiperparâmetros.
-- **Data da entrega:** a preencher.
-- **Arquivos/observações:** a preencher.
+- Treinou e ajustou 7 classificadores em
+  [`notebooks/modelagem_supervisionada.ipynb`](notebooks/modelagem_supervisionada.ipynb):
+  Regressão Logística (L1/L2), KNN, SVM Linear, SVM RBF, Naive Bayes Gaussiano,
+  Árvore de Decisão e Random Forest.
+- Usou a mesma divisão treino/teste do Integrante 1 e do Integrante 3
+  (`test_size=0.2`, `stratify=y`, `random_state=42`), conferida no notebook
+  contra `X_train_scaled.csv` e `y_train.csv`. O conjunto de teste não foi
+  usado: fica para a avaliação do Integrante 5.
+- Busca de hiperparâmetros com `GridSearchCV` e `StratifiedKFold` (10 folds),
+  métrica ROC-AUC, registrando também sensibilidade, especificidade, precisão,
+  F1 e acurácia.
+- Comparou 4 cenários, com toda transformação dentro do pipeline (ajustada só
+  nos folds de treino): A = 30 atributos padronizados; B = PCA com 90% ou 95% da
+  variância, escolhido na validação cruzada (o de 90% reproduz o
+  `wdbc_train_pca.csv`); C = `SelectKBest` com *k* escolhido na validação
+  cruzada; D = Top-10 não redundante do Integrante 3 (lista lida de
+  `wdbc_train_top10.csv`).
+- Mediu quanto a lista fixa do Top-10 favorece o cenário D na validação cruzada
+  (regra do Integrante 3 refeita dentro de cada fold): o efeito é pequeno na
+  Regressão Logística, nos SVMs e no Random Forest (até 0,002 de ROC-AUC), mas
+  grande na Árvore de Decisão (0,025).
+- Comparação estatística com validação cruzada repetida (10 folds × 3), teste t
+  pareado com correção de Nadeau e Bengio e ajuste de Holm para comparações
+  múltiplas.
+- Resultado: ROC-AUC entre 0,96 e 0,997. Regressão Logística, SVM Linear e
+  SVM RBF no topo; melhor média do SVM RBF no cenário D, mas nenhuma das outras
+  27 combinações difere significativamente dela depois do ajuste. Reduzir a
+  dimensão (B, C ou D) não muda significativamente o desempenho de nenhum
+  modelo.
+- Arquivos para o Integrante 5:
+  - [`models/modelos_supervisionados.joblib`](models/modelos_supervisionados.joblib):
+    os 28 pipelines ajustados (chave: `(modelo, cenário)`), com `predict_proba`;
+  - [`results/hiperparametros_e_cv.csv`](results/hiperparametros_e_cv.csv);
+  - [`results/ranking_cv_repetida.csv`](results/ranking_cv_repetida.csv).
+- Observação para o Integrante 5: os pipelines recebem os **30 atributos
+  originais, sem padronizar** (`wdbc_limpo.csv` com a mesma divisão), porque
+  cada um já faz a própria padronização, PCA ou seleção. Não usar
+  `X_test_scaled.csv` nem `wdbc_test_*.csv` com eles (padronização dupla).
+  Exemplo de uso na Seção 5 do notebook.
 
 ## Integrante 5 — Avaliação, síntese e documentação
 
